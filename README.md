@@ -74,9 +74,9 @@ GitHub Actions requires `on.schedule.cron` to be a literal value in the workflow
 - cron: '15 9 * * 1-5'
 ```
 
-That's a standard cron expression in UTC. Common conversions:
+That's a standard cron expression in UTC. Need help generating one? Try [crontab.guru](https://crontab.guru/#15_9_*_*_1-5).
 
-Need help generating one? Try [crontab.guru](https://crontab.guru/#15_9_*_*_1-5).
+Common conversions:
 
 | Timezone | 6:15 AM local in UTC | Cron |
 | --- | --- | --- |
@@ -113,7 +113,7 @@ gh run list --workflow warmup.yml --repo <your-user>/claude-warmup
 gh run view --log --repo <your-user>/claude-warmup
 ```
 
-Check the logs. You should see a Haiku response or a rate-limit message. Both mean it worked.
+Check the logs. GitHub may delay scheduled runs by several minutes under load, so leave some margin before the hour boundary. You should see a Haiku response or a rate-limit message. Both mean it worked.
 
 ### 6. Verify
 
